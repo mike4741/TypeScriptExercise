@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "compose": "nodemon --config nodemon.json src/compose.ts",
+    "staircase": "nodemon --config nodemon.json src/staircase.ts",
+    "substring": "nodemon --config nodemon.json src/substring.ts",
+    "sum": "nodemon --config nodemon.json src/sum.ts"
+  },
+  "dependencies": {
+    "@types/node": "^14.14.17",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
