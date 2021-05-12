@@ -1,26 +1,26 @@
-// Find the longest substring with no repeated characters.
-// Type your solution here
+//Find the longest substring with no repeated characters.
 
-const solution = (str: string) => { let arr = str.split('')
+const solution = (str: string) => 
+{
   let start:number = 0;
   let maxLen:number = 0;
-  let map  = {};
-  for (let i=0; i < arr.length; i++) {
-      let current:number = map[arr[i]];
+  let charPositions = {};
+  
+  for (let i=0; i < str.length; i++) {
+      let current:number = charPositions [str[i]];
+      console.log("number"+Number)
       if (current!=null && start <= current) {
           start = current + 1;
       } else {
           maxLen = Math.max(maxLen, i - start + 1)
       }
-        map[arr[i]] = i;
+      charPositions [str[i]] = i;
   }
-  
+
   return maxLen;
-  
-  
-};
+}
 
-console.log(solution('nndNfdfdf')); // 4
-//console.log(solution('nnvb')); // 3
-//console.log(solution('nnvberwasdfasd')); // 10
 
+
+ // test outputs 
+ console.log(solution('nndNfdfdf')); // 4
