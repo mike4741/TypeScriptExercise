@@ -30,24 +30,24 @@ function largestsubarraysum( ...a:number[])
   */  
 
 
-    let lmax: number = 0;
-    let Gmax : number = 0;
-    let index :number = 0;
+    let lmax: number = a[0];
+    let Gmax : number = a[0];
+    let index :number = 1;
 
  for (index ; index<a.length-1;index++ ){
-      lmax =lmax +a[index]
-      if(lmax<0)
-        lmax =0;
-        else if (Gmax<lmax){
-            Gmax = lmax;
-        }
-        
- }
-      
+    lmax =lmax +a[index]
      
+     if(lmax<a[index])
+      lmax = a[index];
+          
+   
+    if (Gmax<lmax){
+      Gmax = lmax;
+        }
+ }     
 return Gmax ; 
      
 }
        
-console.log(largestsubarraysum(-2,-3,4,-1,5));  //-1
-console.log(largestsubarraysum(1,2,1,3,5,-7,1));  //7
+console.log(largestsubarraysum(-2,10,-3,4,-1,-2,1,5,-3,-1-7,));  //-1
+console.log(largestsubarraysum(-1,-2,3,5,-7,1));  //7

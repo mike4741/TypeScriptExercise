@@ -1,10 +1,11 @@
 //Given an unsorted array of nonnegative integers, find a continous subarray which adds to a given number.
-
+/*
+import { sign } from "crypto";
 import { join } from "path";
 import { isBreakStatement } from "typescript";
 import { inflate } from "zlib";
 
-/*
+
 
     function subarray(a:number[] , sum:number)  {
          let lsum:number = 0;
@@ -84,31 +85,91 @@ import { inflate } from "zlib";
   subarray(q,7);// 3000000000  
 
   */
+ /*
+ 
   function SubArraySum(a:number[],sum:number)
   {
      let lsum:number =a[0];
      let left:number =0 ;
      let right:number =0;
      let alen :number = a.length;
-     
-       while(right<=alen && sum != lsum){
-          if(sum >lsum){
-             lsum +=a[right];
-             right ++;
-          }
-          else if(sum<lsum)
-          {
-             lsum -=a[left];
-             left++;
-          }
+     do{
+         if(lsum <sum){
+            lsum +=a[right];
+            right ++;
          }
-       if(sum == lsum){
-           return new Array (left-1 , right-1);
-          }else
+         else if(lsum>sum)
+         {
+            lsum -=a[left];
+            left++;
+         }
+          else if   (sum == lsum){
+           return new Array (left , right);}
+     } while(right<=alen && sum != lsum)
+     
+         
+      
+         
           return[-1,-1];
-       }
+       
+      }
+      // let sq:number[]=new Array (1,4);
+ let q:number[]=new Array (1,4,0,0,3,10,5,4);
+ // SubArraySum(q,7);// 3000000000
+  console.log( SubArraySum(q,7))
+
+  /*
+  function SubArraySum(a:number[],sum:number){
+     let lsum:number = 0;
+     let left :number = 0;
+     let right:number = a.length ;
+     let mid:number = 0 ;
+
+     while(left<right && lsum !=sum){
+        if (lsum <sum){
+           lsum += a[mid];
+           mid++;}
+        else if  (lsum>sum){
+           lsum -=a[right];
+           right --;}
+         }
+          if  (lsum == sum)
+            return new Array(left , right);
+         else 
+           return [-1];
+     }
   
-       let q:number[]=new Array (1,4);
- // let q:number[]=new Array (1,4,0,0,3,10,5,4);
-  //SubArraySum(q,7);// 3000000000
-  console.log( SubArraySum(q,2))
+
+  let q:number[]=new Array (1,4,0,0,3,10,5,4);
+  SubArraySum(q,7);// 3000000000
+  console.log( SubArraySum(q,2))*/
+
+  function SubArraySum(a:number[],sum:number)
+ {
+     
+     let lsum :number =0 , left: number  =0, right: number = 0  ;
+       
+     for (let i= 0;i <= a.length; i++) {
+     if (right<=a.length-1&&lsum<sum){
+        lsum+=a[right];
+        right++;
+     }
+
+      if (left<=right && lsum>sum)
+      {
+         lsum -=a[left];
+         left++;
+      }
+      if (lsum == sum){
+         return  new Array(left , right)
+      }
+       
+      
+      
+   }  
+   console.log(" no sub array found ");// 4 
+       return 0;  
+ }
+    let q:number[]=new Array (10,2,-2,-20,10);
+
+    console.log( SubArraySum(q,-10))

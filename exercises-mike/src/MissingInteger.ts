@@ -16,5 +16,5 @@ One of the integers is missing in the list. Write an efficient code to find the 
       return mval;
   
  }
-//console.log(MissingVal(1,2,3,5,6));  //4
+//console.log(MissingVal(1,2,-3,5,6));  //4
 console.log(MissingVal(1,2,3,5));  //4

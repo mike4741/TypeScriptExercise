@@ -11,8 +11,13 @@
     "twonumSum" :"nodemon --config nodemon.json src/twonumSum.ts",
     "Sort012" :"nodemon --config nodemon.json src/Sort012.ts",
     "EquilibriumIndex" :"nodemon --config nodemon.json src/EquilibriumIndex.ts",
+    "AnySubArraySum" :"nodemon --config nodemon.json src/AnySubArraySum.ts",
+    "k_thNumber" :"nodemon --config nodemon.json src/k_thNumber.ts",
     "Leader" :"nodemon --config nodemon.json src/Leader.ts",
     "Spiral" :"nodemon --config nodemon.json src/Spiral.ts"
+
+    
+    
   },
   "dependencies": {
     "@types/node": "^14.14.17",
